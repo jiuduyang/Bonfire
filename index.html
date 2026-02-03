@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>Bonfire服务器</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<!-- 头部 -->
+<header>
+    <div class="header-content">
+        <div class="logo">
+          <video muted="muted" autoplay="autoplay" loop="loop" >
+            <source src="../../BonfireFuWuQi/Bonfire服务器首页视频.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="tagline">欢迎来到Bonfire服务器，一起创造，一起冒险！</div>
+        <div class="server-ip">加入QQ群获取服务器地址：716695950</div>
+    </div>
+</header>
+
+<!-- 导航栏 -->
+<nav>
+    <div class="nav-container">
+        <div class="nav-item">首页</div>
+        <div class="nav-item">服务器特色</div>
+        <div class="nav-item">玩法设计</div>
+        <div class="nav-item">服务说明</div>
+    </div>
+</nav>
+
+<!-- 主要内容 -->
+<main>
+    <!-- 首页内容 -->
+    <section id="home">
+        <!-- 服务器信息 -->
+        <h2 class="section-title">服务器信息</h2>
+        
+        <div class="info-grid">
+            <!-- 服务器特色 -->
+            <div class="info-card" id="features">
+                <h3>服务器特色</h3>
+                <ul>
+                    <li>24小时在线</li>
+                    <li>服务器无卡顿</li>
+                    <li>服务器周目制</li>
+                    <li>混合端服务器，mod插件两不误</li>
+                    <li>配有数据包，末地大量修改，全新末影龙擂台</li>
+                    <li>主世界添加新建筑物结构等。</li>
+                    <li>服务器无卡顿常在线无压力</li>
+                </ul>
+            </div>
+            
+            <!-- 服务器配置 -->
+            <div class="info-card">
+                <h3>服务器配置</h3>
+                <ul>
+                    <li>高性能服务器</li>
+                    <li>CPU：Ryzen 9950X</li>
+                    <li>6c20g</li>
+                    <li>高速NVME固态硬盘</li>
+                </ul>
+            </div>
+            
+            <!-- 游戏玩法 -->
+            <div class="info-card" id="gameplay">
+                <h3>游戏玩法</h3>
+                <ul>
+                    <li>本周目使用 农场物语整合包</li>
+                    <li>各玩家独立生存，随意发展</li>
+                    <li>机械动力，休闲养老，冒险生存，机械全自动化等</li>
+                    <li>FTB领地强加载</li>
+                    <li>FTB任务</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- 玩家统计 -->
+        <h2 class="section-title">玩家统计</h2>
+        <div class="players-section">
+        <div class="players-grid"></div>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h4>统计平均在线玩家</h4>
+                <div class="stat-value">5</div>
+            </div>
+            <div class="stat-card">
+                <h4>今日在线峰值</h4>
+                <div class="stat-value">5</div>
+            </div>
+            <div class="stat-card">
+                <h4>服务器开服时间</h4>
+                <div class="stat-value">2026-02-02</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 服务器规则 -->
+    <h2 class="section-title">服务器规则</h2>
+    <div class="rules-section" id="service-info">
+        <div class="rules-content">
+            <ul>
+                <li>禁止使用作弊插件和客户端</li>
+                <li>禁止恶意破坏他人建筑</li>
+                <li>禁止辱骂、欺诈等不良行为</li>
+                <li>禁止刷屏和广告行为</li>
+                <li>禁止滥用游戏机制</li>
+                <li>尊重管理员和其他玩家</li>
+                <li>遵守服务器的具体规则规定</li>
+                <li>享受游戏，共同维护良好的游戏环境</li>
+            </ul>
+        </div>
+    </div>
+    </section>
+</main>
+
+<!-- 页脚 -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-logo">Bonfire</div>
+        <div class="social-links"><a href="https://qm.qq.com/q/pl4jJ9qB2g" target="new">QQ群</a><a href="https://pd.qq.com/s/2ow4fx6k8" target="new">QQ频道</a><a href="https://center.mcmod.cn/734580/" target="new">服主百科</a><a href="https://discord.gg/8D6WMtZX" target="new">discord</a>
+        </div>
+    </div>
+</footer>
+
+<!-- JavaScript -->
+<script>
+// 页面加载完成后初始化
+window.onload = function() {
+    // 添加卡片淡入效果
+    const cards = document.querySelectorAll('.info-card, .player-card, .stat-card, .rules-section');
+    cards.forEach((card, index) => {
+        setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+        }, index * 100);
+    });
+    
+    // 添加导航点击事件
+    const navItems = document.querySelectorAll('.nav-item');
+    navItems.forEach((item, index) => {
+        item.addEventListener('click', function() {
+            let targetId = '';
+            switch(index) {
+                case 0: // 首页
+                    targetId = 'home';
+                    break;
+                case 1: // 服务器特色
+                    targetId = 'features';
+                    break;
+                case 2: // 玩法设计
+                    targetId = 'gameplay';
+                    break;
+                case 3: // 服务说明
+                    targetId = 'service-info';
+                    break;
+            }
+            
+            if (targetId) {
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    // 平滑滚动
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }
+        });
+    });
+};
+</script>
+</body>
+</html>
